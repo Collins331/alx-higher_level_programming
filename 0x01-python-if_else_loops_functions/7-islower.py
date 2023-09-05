@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     for lowcase in c:
         if 97 <= ord(lowcase) <= 122:
