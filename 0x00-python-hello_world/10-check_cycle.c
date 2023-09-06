@@ -9,13 +9,15 @@ int check_cycle(listint_t *list)
 	listint_t *old = list;
 	listint_t *new = list;
 
-	while (old->next != NULL && new->next != NULL)
+	while (new->next != NULL && new->next->next != NULL)
 	{
 		old = old->next;
 		new = new->next->next;
 
 		if (old == new)
+		{
 			return (1);
+		}
 	}
 	return (0);
 }
