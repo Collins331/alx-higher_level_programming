@@ -21,6 +21,7 @@ int check_cycle(listint_t *list)
 		if (list == new)
 		{
 			return (1);
+			free(new);
 		}
 	}
 	return (0);
