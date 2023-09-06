@@ -8,6 +8,10 @@ int check_cycle(listint_t *list)
 {
 	listint_t *new;
 
+	if (list == NULL)
+	{
+		return (0);
+	}
 	new = list;
 
 	while (list != NULL)
@@ -21,7 +25,6 @@ int check_cycle(listint_t *list)
 		if (list == new)
 		{
 			return (1);
-			free(new);
 		}
 	}
 	return (0);
