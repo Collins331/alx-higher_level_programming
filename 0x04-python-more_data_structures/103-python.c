@@ -7,8 +7,7 @@
  * @p: PyObject
  * Return: void
  */
-* /
-    void print_python_list(PyObject *p)
+void print_python_list(PyObject *p)
 {
     PyListObject *list;
     Py_ssize_t size, i;
