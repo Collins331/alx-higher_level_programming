@@ -33,7 +33,11 @@ class Square:
     """initializes position attribute to public"""
     @position.setter
     def position(self, value):
-        if len(value) != 2 or (value[0] < 0 or value[1] < 0):
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
     """a public  method that determines the area of a square"""
@@ -46,8 +50,9 @@ class Square:
         """if size = 0 , an empty line is printed"""
         if self.size == 0:
             print()
-        if self.position[1] > 0:
-            print()
-        """prints # in the range of size"""
-        for i in range(self.size):
-            print("{}{}".format(" " * self.position[0], "#" * self.size))
+        else:
+            for _ in range(self.position[1]):
+                print()
+            """prints # in the range of size"""
+            for _ in range(self.size):
+                print("{}{}".format(" " * self.position[0], "#" * self.size))
