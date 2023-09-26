@@ -6,8 +6,8 @@ class Square:
     """init function"""
     def __init__(self, size=0, position=(0, 0)):
         """initializes a private attribute"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     """Retrieves the value from the hidden attribute"""
     @property
