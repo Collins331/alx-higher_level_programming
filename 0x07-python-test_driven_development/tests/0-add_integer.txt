@@ -1,0 +1,53 @@
+```
+>>> add_integer = __import__('0-add_integer').add_integer
+
+``test on addition of integers``
+>>> print(add_integer(1, 2))
+3
+
+``test on addition of negative integers``
+>>> print(add_integer(100, -2))
+98
+
+``test on addition by passing only one integer``
+>>> print(add_integer(2))
+100
+
+``test on addition by passing a float``
+>>> print(add_integer(100.3, -2))
+98
+
+``test on addition by passing a float``
+>>> print(add_integer(1.     , 2))
+3
+
+``test on addition by passing empty arguments``
+>>> print(add_integer())
+Traceback (most recent call last):
+    ... 
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+``test on addition by passing a string``
+>>> print(add_integer(1, "2"))
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+``test on addition by passing a list``
+>>> print(add_integer(1, [2]))
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+
+``converting float infinititties to int errors`` 
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+``converting float NaN to int errors``
+>>> add_integer(float('NaN'), 2)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
