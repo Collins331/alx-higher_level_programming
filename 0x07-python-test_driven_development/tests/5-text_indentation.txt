@@ -1,0 +1,35 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Nairobi. University? How are you: Collins")
+Nairobi.
+<BLANKLINE>
+ University?
+<BLANKLINE>
+ How are you:
+<BLANKLINE>
+ Collins
+>>> text_indentation(34546556)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation("Kenya", "Uganda")
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+>>> text_indentation("Nairobi. University? How are you: Collins", 34546556)
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+>>> text_indentation(str(34546556))
+34546556
+>>> text_indentation("A sneaky \n new line.")
+A sneaky 
+ new line.
+<BLANKLINE>
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
