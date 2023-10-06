@@ -18,7 +18,7 @@ def get_matrix_sizes(matrix_1, matrix_2, name_1, name_2):
         lambda txt: '{} must be a list of lists'.format(txt),
         lambda txt: '{} should contain only integers or floats'.format(txt),
         lambda txt: 'each row of {} must be of the same size'.format(txt),
-        lambda lst all(map(lambda n: isinstance(n, (int, float)), lst)),
+        lambda l: all(map(lambda n: isinstance(n, (int, float)), l)),
     )
     size0 = [0, 0]
     size1 = [0, 0]
