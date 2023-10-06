@@ -1,69 +1,56 @@
-=================================
-How to Use 101-lazy_matrix_mul.py
-=================================
-
 This module defines a matrix multiplication function
 ``lazy_matrix_mul(m_a, m_b)``.
-
-Usage
-=====
 
 ``lazy_matrix_mul(...)`` returns a new matrix representing the multiplication
 of ``m_a`` by ``m_b``.
 
-::
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> m_a = [
+... [1, 2],
+... [3, 4],
+... ]
+>>> m_b = m_a
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[ 7 10]
+    [15 22]]
 
-    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4],
-    ... ]
-    >>> m_b = m_a
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    [[ 7 10]
-     [15 22]]
 
-::
-
-    >>> m_a = [[1, 2]]
-    >>> m_b = [
-    ... [3, 4],
-    ... [5, 6]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    [[13 16]]
+>>> m_a = [[1, 2]]
+>>> m_b = [
+... [3, 4],
+... [5, 6]
+... ]
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[13 16]]
 
 The function also works with floating-point numbers.
 
-::
-
-    >>> m_a = [
-    ... [1.2, 5.5, 6.2],
-    ... [4.66, 12.3, -9.2]
-    ... ]
-    >>> m_b = [
-    ... [5.0, 3.3],
-    ... [-2.9, 4.4],
-    ... [7.2, 4.4]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    [[ 34.69   55.44 ]
-     [-78.61   29.018]]
+>>> m_a = [
+... [1.2, 5.5, 6.2],
+... [4.66, 12.3, -9.2]
+... ]
+>>> m_b = [
+... [5.0, 3.3],
+... [-2.9, 4.4],
+... [7.2, 4.4]
+... ]
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[ 34.69   55.44 ]
+    [-78.61   29.018]]
 
 A minimum of two arguments must be provided.
 
-::
+>>> print(lazy_matrix_mul(m_a))
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
-    >>> print(lazy_matrix_mul(m_a))
-    Traceback (most recent call last):
-    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
-::
-
-    >>> print(lazy_matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
-    Traceback (most recent call last):
-    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
-    'm_a' and 'm_b'
+>>> print(lazy_matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
+'m_a' and 'm_b'
 
 ValueErrors
 ===========
@@ -207,11 +194,12 @@ equivalent. Otherwise, a ValueError is raised.
 
 ::
 
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4, 5]
-    ... ]
-    >>> m_b = m_a
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    Traceback (most recent call last):
-    ValueError: setting an array element with a sequence.
+>>> m_a = [
+... [1, 2],
+... [3, 4, 5]
+... ]
+>>> m_b = m_a
+>>> print(lazy_matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+NameError: name 'lazy_matrix_mul' is not defined
