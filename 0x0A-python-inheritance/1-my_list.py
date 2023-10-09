@@ -3,7 +3,12 @@
 
 
 class MyList(list):
-    """prints a sorted list"""
+    """initializes the sub class"""
+    def __init__(self):
+        """supper class is instatiated"""
+        super().__init__()
+
     def print_sorted(self):
+        """prints the sorted list"""
         sorted_list = sorted(self)
         print(sorted_list)
