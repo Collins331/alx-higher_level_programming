@@ -29,14 +29,16 @@ class Student:
                     d[attr] = getattr(self, attr)
             return d
         return self.__dict__
-    
+
     def reload_from_json(self, json):
         """
-        Replaces all attributes of the Student instance with the values from the provided dictionary.
+        Replaces all attributes of the Student instance with
+        the values from the provided dictionary.
         Args:
             json (dict): A dictionary containing attribute-value pairs.
         Note:
-            This method assumes that the dictionary keys match the public attribute names of the Student instance.
+            This method assumes that the dictionary keys match
+            the public attribute names of the Student instance.
         """
         for key, value in json.items():
             setattr(self, key, value)
