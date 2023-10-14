@@ -3,11 +3,15 @@
 """subclass defination"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     Rectangle subclass that inherits from
     Base super class
+    Its arguments are:
+    width, height, x, y, id
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialization of subclass"""
         super().__init__(id)
@@ -46,7 +50,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """gets x """
+        """gets x"""
         return self.__x
 
     @x.setter
@@ -74,9 +78,46 @@ class Rectangle(Base):
 
     def area(self):
         """calculates the area of a rectangle"""
-        return (self.__height * self.__width)
+        return self.__height * self.__width
 
     def display(self):
         """displays the instance of rectangle"""
+        for j in range(self.__y):
+            print()
         for i in range(self.__height):
-            print('#' * self.__width)
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def __str__(self):
+        """overrides the class"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """updates the values of instance attributes"""
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.__width = args[1]
+            if len(args) > 2:
+                self.__height = args[2]
+            if len(args) > 3:
+                self.__x = args[3]
+            if len(args) > 4:
+                self.__y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """return a dict data type with attribute keys and values"""
+        new_dict = {
+                'id' : self.id,
+                'width' : self.width,
+                'height' : self.height,
+                'x' : self.x,
+                'y' : self.y
+                }
+        return new_dict

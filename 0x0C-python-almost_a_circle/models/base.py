@@ -5,8 +5,8 @@
 
 class Base:
     """
-    the base class that will be used as 
-    a super class to manage id of future 
+    the base class that will be used as
+    a super class to manage id of future
     classes,
     it has a private attribute:
         __n_objects
@@ -16,7 +16,7 @@ class Base:
 
     def __init__(self, id=None):
         """class initialization"""
-        if id == None:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
