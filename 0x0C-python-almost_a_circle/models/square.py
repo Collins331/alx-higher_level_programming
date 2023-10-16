@@ -53,9 +53,9 @@ class Square(Rectangle):
     def to_dictionary(self):
         """return a dictionary containing value of arguments"""
         new_dict = {
-                'id' : self.id,
-                'size' : self.size,
-                'x' : self.x,
-                'y' : self.y
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
                 }
         return new_dict
