@@ -75,7 +75,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        filename = cls.__name__ + '.csv'
+        """
+	saves the file with a csv extension
+	(serializes the list object
+        """
+	filename = cls.__name__ + '.csv'
         with open(filename, 'w', newline='') as file:
             writer = csv.writer(file)
             if cls.__name__ == "Rectangle":
@@ -87,6 +91,10 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+    	"""
+	loads an object list from a csv file
+	deserializes the file
+	"""
         filename = cls.__name__ + '.csv'
         try:
             with open(filename, 'r', newline='') as file:
