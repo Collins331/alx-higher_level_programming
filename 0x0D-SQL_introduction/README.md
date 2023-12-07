@@ -5,3 +5,7 @@
 - [x] [4-first_table.sql](4-first_table.sql)
 - [x] [5-full_table.sql](5-full_table.sql)
 - [x] [6-list_values.sql](6-list_values.sql)
+- [x] [7-insert_value.sql](7-insert_value.sql)
+- [x] [8-count_89.sql](8-count_89.sql)
+- [x] [9-full_creation.sql](9-full_creation.sql)
+- [x] [10-top_score.sql](10-top_score.sql)
