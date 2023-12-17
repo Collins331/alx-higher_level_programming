@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-import sys
-"""import the sys module"""
-import MySQLdb
-"""imports the MySQLdb used below"""
+"""
+import the sys module
+imports the MySQLdb used below
+"""
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
     """
     ensures that the this module cannot be
     called by other modules indirectly
