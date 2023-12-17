@@ -6,7 +6,8 @@ import MySQLdb
 
 if __name__ == "__main__":
     """
-    ensures that the this module cannot be
+    ensures that the this
+    module cannot be
     called by other modules indirectly
     """
     usr = sys.argv[1]
