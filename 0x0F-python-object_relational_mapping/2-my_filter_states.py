@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""takes in arguments and displays all values in the states table """
+"""
+takes in arguments and displays all values in the states table
+"""
 
 if __name__ == "__main__":
     """
@@ -14,7 +16,7 @@ if __name__ == "__main__":
 
     cursor = dtb.cursor()
 
-    query = """SELECT * FROM states  WHERE name = '{}'
+    query = """SELECT * FROM states  WHERE name LIKE BINARY '{}'
             ORDER BY states.id ASC""".format(argv[4])
     cursor.execute(query)
 
