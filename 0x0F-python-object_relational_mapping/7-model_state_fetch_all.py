@@ -12,8 +12,8 @@ if __name__ == "__main__":
     from sqlalchemy.orm import sessionmaker
     """creates engine"""
     engine = create_engine(
-    "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        argv[1], argv[2], argv[3])
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+            argv[1], argv[2], argv[3])
         )
 
     Session = sessionmaker(bind=engine)
@@ -23,6 +23,6 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id).all()
     """query data from the database"""
     for state in states:
-    print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
 
     session.close()
