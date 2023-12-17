@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 import sys
+"""import the sys module"""
 import MySQLdb
+"""imports the MySQLdb used below"""
 
 if __name__ == "__main__":
+    """
+    ensures that the this module cannot be
+    called by other modules indirectly
+    """
     usr = sys.argv[1]
     psw = sys.argv[2]
     db = sys.argv[3]
