@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
+"""import sys module and MySQLdb module"""
+
 
 if __name__ == "__main__":
+    """ensures that the module can be only called directly"""
+    import sys
+    import MySQLdb
+    """accepts three inputs"""
     usr = sys.argv[1]
     psw = sys.argv[2]
     db = sys.argv[3]
