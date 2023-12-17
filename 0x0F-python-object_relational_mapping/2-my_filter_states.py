@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     cursor = dtb.cursor()
 
-    query = f"SELECT * FROM states  WHERE name = '{argv[4]}'\
-            ORDER BY states.id ASC"
+    query = """SELECT * FROM states  WHERE name = '{}'
+            ORDER BY states.id ASC""".format(argv[4])
     cursor.execute(query)
 
     results = cursor.fetchall()
