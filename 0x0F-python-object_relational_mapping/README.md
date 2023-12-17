@@ -29,3 +29,7 @@ $ sudo pip3 install SQLAlchemy
 ...
 ```
 
+## All the required packages can be installed by :
+```
+pip -r install requirements.txt
+```
