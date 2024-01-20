@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+"""module that sends requests to urls"""
 import sys
 import urllib.request
 
