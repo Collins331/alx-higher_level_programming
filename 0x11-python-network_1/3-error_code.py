@@ -4,9 +4,12 @@
 from urllib import request, error
 import sys
 
-try:
-    with request.urlopen(sys.argv[1]) as respose:
-        data = response.read()
+if __name__ == "__main__":
+    """prints the error code encountered"""
+    try:
+        with request.urlopen(sys.argv[1]) as response:
+            data = response.read().decode('utf-8')
+            print(data)
 
-except error.HTTPError as e:
-    print("Error code: {}".format(e.code))
+    except error.HTTPError as e:
+        print("Error code: {}".format(e.code))
