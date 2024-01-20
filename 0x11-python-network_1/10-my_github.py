@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """import sys and requests modules"""
-from sys import argv as ag
+import sys
 import requests
 from requests.auth import HTTPBasicAuth
 
