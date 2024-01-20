@@ -13,5 +13,5 @@ if __name__ == "__main__":
             print(r.text)
         else:
             r.raise_for_status()
-    except HTTPError:
-        print("Error code: {}".format(r.status_code))
+    except HTTPError as e:
+        print("Error code: {}".format(e.status_code))
