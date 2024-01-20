@@ -5,11 +5,11 @@ from sys import argv
 
 if __name__ == "__main__":
     """
-    script that takes in a URL, sends a request to the URL and displays the body
+    script that takes in a URL, sends request to the URL and displays the body
     """
     try:
         r = requests.get(argv[1])
-        if r.text != None:
+        if r.text is not None:
             print(r.text)
         else:
             r.raise_for_status()
