@@ -6,4 +6,4 @@ import sys as s
 if __name__ == "__main__":
     """request header details for url"""
     res = r.get(s.argv[1])
-    print(res.headers['X-Request-Id'])
+    print(res.headers.get('X-Request-Id'))
