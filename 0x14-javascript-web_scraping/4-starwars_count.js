@@ -1,23 +1,23 @@
 #!/usr/bin/node
-const argv = process.argv;
+
+// import the module
 const request = require('request');
 
-request.get(argv[2], (error, response, body) => {
-  if (error) {
-    console.error(error);
-    return;
+// The first argument is the API URL
+const apiUrl = process.argv[2];
+
+// Make an HTTP GET request to the API
+request(apiUrl, function (error, response, body) {
+  if (!error) {
+    // parse the JSON response
+    const results = JSON.parse(body).results;
+
+    // count no of movies where "Wedge Antilles" is present
+    const moviesWithWedge = results.reduce((count, movie) => {
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        ? count + 1 // if found
+        : count; // if not found
+    }, 0); // initiliazing count to zero
+    console.log(moviesWithWedge);
   }
-  const data = JSON.parse(body);
-  const results = data.results;
-  const len = results.length;
-  let count = 0;
-  for (let i = 0; i < len; i++) {
-    // console.log(results[i].characters);
-    for (let j = 0; j < results[i].characters.length; j++) {
-      if (results[i].characters[j] === 'https://swapi-api.alx-tools.com/api/people/18/') {
-        count++;
-      }
-    }
-  }
-  console.log(count);
 });
